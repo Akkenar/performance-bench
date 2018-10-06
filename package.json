@@ -1,0 +1,31 @@
+{
+  "name": "performance-bench",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "yarn": "npm-run-all yarn:*",
+    "ncu": "npm-run-all ncu:*",
+    "start": "concurrently \"npm run start:angular\" \"npm run start:react\"",
+    "ncu:root": "ncu -u",
+    "ncu:angular": "cd projects/angular-demo && ncu -u",
+    "ncu:react": "cd projects/react-demo && ncu -u",
+    "yarn:angular": "cd projects/angular-demo && yarn",
+    "yarn:react": "cd projects/react-demo && yarn",
+    "build:angular": "cd projects/angular-demo && npm run build",
+    "build:react": "cd projects/react-demo && npm run build",
+    "start:angular": "cd projects/angular-demo && npm start",
+    "start:react": "cd projects/react-demo && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/cli": "7.0.0-rc.2",
+    "concurrently": "4.0.1",
+    "create-react-app": "2.0.3",
+    "npm-check-updates": "2.14.2",
+    "npm-run-all": "4.1.3"
+  }
+}

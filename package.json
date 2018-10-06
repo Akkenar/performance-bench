@@ -16,7 +16,8 @@
     "build:angular": "cd projects/angular-demo && npm run build",
     "build:react": "cd projects/react-demo && npm run build",
     "start:angular": "cd projects/angular-demo && npm start",
-    "start:react": "cd projects/react-demo && npm start"
+    "start:react": "cd projects/react-demo && npm start",
+    "format": "prettier --config ./.prettierrc --write \"./**/*{.ts,.js,.jsx,.json,.css,.scss,.md}\""
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +27,7 @@
     "concurrently": "4.0.1",
     "create-react-app": "2.0.3",
     "npm-check-updates": "2.14.2",
-    "npm-run-all": "4.1.3"
+    "npm-run-all": "4.1.3",
+    "prettier": "1.14.3"
   }
 }

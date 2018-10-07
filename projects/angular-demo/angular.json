@@ -23,11 +23,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": [{
-              "input": "src/styles.scss",
-              "bundleName": "styles",
-              "lazy": true
-            }],
+            "styles": [
+              {
+                "input": "src/styles.scss",
+                "bundleName": "styles",
+                "lazy": true
+              }
+            ],
             "scripts": []
           },
           "configurations": {

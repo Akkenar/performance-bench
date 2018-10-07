@@ -6,13 +6,19 @@
   <!-- Right hand side -->
   <span class="header__toolbar-spacer"></span>
   <nav>
-    <a mat-button routerLink="home" routerLinkActive="active">Home</a>
-    <a mat-button routerLink="login" routerLinkActive="active">Login</a>
+    <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+    <a
+      *ngIf="!(isAuthenticated$ | async)"
+      mat-button
+      routerLink="login"
+      routerLinkActive="active"
+    >
+      Login</a>
   </nav>
-  <div *ngIf="isAuthenticated">
+  <div *ngIf="isAuthenticated$ | async">
     <button mat-button [matMenuTriggerFor]="userMenu">
       <mat-icon>verified_user</mat-icon>
-      {{username}}
+      {{username$ | async}}
     </button>
     <mat-menu
       #userMenu="matMenu"

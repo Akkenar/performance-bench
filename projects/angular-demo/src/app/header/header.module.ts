@@ -6,18 +6,21 @@ import {
   MatToolbarModule,
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { routes } from '../app-routing.module';
+import { UserModule } from '../core/user/user.module';
 import { SharedModule } from '../shared.module';
 import { HeaderComponent } from './header.component';
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
+    RouterModule.forChild(routes),
     SharedModule,
-    RouterModule,
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    UserModule,
   ],
   exports: [HeaderComponent],
 })

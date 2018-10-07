@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AppState } from '../core/app.state';
+import { LogoutAction } from '../core/user/user.actions';
+import { selectUserEmail } from '../core/user/user.selector';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +12,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  username = 'User';
-  isAuthenticated: true;
+  username$: Observable<string>;
+  isAuthenticated$: Observable<boolean>;
 
-  constructor(private router: Router) {}
+  constructor(private store$: Store<AppState>) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.username$ = this.store$.pipe(select(selectUserEmail));
+    this.isAuthenticated$ = this.username$.pipe(map(username => !!username));
+  }
 
   handleLogout() {
-    this.router.navigateByUrl('login');
+    this.store$.dispatch(new LogoutAction());
   }
 }

@@ -12,7 +12,9 @@ describe('focus', () => {
       };
 
       focusOnFirstError(documentMock as Document);
-      expect(documentMock.querySelectorAll).toHaveBeenCalledWith('*[aria-invalid="true"]');
+      expect(documentMock.querySelectorAll).toHaveBeenCalledWith(
+        '*[aria-invalid="true"]'
+      );
     });
 
     it('should set the focus on the first element on error', () => {

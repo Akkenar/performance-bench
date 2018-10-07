@@ -45,7 +45,10 @@
               "vendorChunk": true,
               "buildOptimizer": true,
               "commonChunk": true,
-              "lazyModules": ["src/app/loader/loader.module.ts", "src/app/header/header.module.ts"],
+              "lazyModules": [
+                "src/app/loader/loader.module.ts",
+                "src/app/header/header.module.ts"
+              ],
               "budgets": [
                 {
                   "type": "initial",

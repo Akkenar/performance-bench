@@ -4,7 +4,9 @@
  * the Material Design library does support this accessibility feature.
  */
 export const focusOnFirstError = (target = document) => {
-  const element = <HTMLElement>target.querySelectorAll('*[aria-invalid="true"]')[0];
+  const element = <HTMLElement>(
+    target.querySelectorAll('*[aria-invalid="true"]')[0]
+  );
 
   if (element) {
     element.focus();

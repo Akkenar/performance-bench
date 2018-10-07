@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatMenuModule,
+  MatToolbarModule,
+} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { HeaderComponent } from './header.component';

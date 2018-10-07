@@ -5,8 +5,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
-import { focusOnFirstError } from '../libs/focus';
+import { Store } from '@ngrx/store';
+import { AppState } from '../core/app.state';
+import { focusOnFirstError } from '../core/libs/focus';
+import { LoginAction } from '../core/user/user.actions';
 
 @Component({
   templateUrl: './login-page.component.html',
@@ -15,7 +17,7 @@ import { focusOnFirstError } from '../libs/focus';
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private store$: Store<AppState>) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -26,9 +28,8 @@ export class LoginPageComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      // Navigates to the default route. See app-routing.module
-      // for more information on what's the default root.
-      this.router.navigate(['/']);
+      const credentials = this.loginForm.getRawValue();
+      this.store$.dispatch(new LoginAction(credentials));
     } else {
       focusOnFirstError();
     }

@@ -42,12 +42,13 @@
               "namedChunks": true,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": true,
+              "vendorChunk": false,
               "buildOptimizer": true,
               "commonChunk": true,
               "lazyModules": [
                 "src/app/loader/loader.module.ts",
-                "src/app/header/header.module.ts"
+                "src/app/header/header.module.ts",
+                "src/app/core/user/user.module.ts"
               ],
               "budgets": [
                 {

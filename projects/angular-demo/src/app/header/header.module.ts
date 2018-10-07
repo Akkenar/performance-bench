@@ -5,7 +5,7 @@ import {
   MatMenuModule,
   MatToolbarModule,
 } from '@angular/material';
-import { RouterModule } from '@angular/router';
+import { UserModule } from '../core/user/user.module';
 import { SharedModule } from '../shared.module';
 import { HeaderComponent } from './header.component';
 
@@ -13,11 +13,11 @@ import { HeaderComponent } from './header.component';
   declarations: [HeaderComponent],
   imports: [
     SharedModule,
-    RouterModule,
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    UserModule,
   ],
   exports: [HeaderComponent],
 })

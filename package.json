@@ -17,7 +17,7 @@
     "build:react": "cd projects/react-demo && npm run build",
     "start:angular": "cd projects/angular-demo && npm start",
     "start:react": "cd projects/react-demo && npm start",
-    "format": "prettier --config ./.prettierrc --write \"./**/*{.ts,.js,.jsx,.json,.css,.scss,.md}\""
+    "format": "prettier --config ./.prettierrc --write \"{,!(dist|build|node_modules)/**/}/*{.ts,.js,.jsx,.json,.css,.scss,.md}\""
   },
   "author": "",
   "license": "ISC",

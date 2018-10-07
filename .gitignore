@@ -5,3 +5,4 @@ idea/
 yarn-error.log
 build
 *.report.html
+.idea/

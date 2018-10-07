@@ -1,0 +1,32 @@
+<mat-toolbar class="header">
+  <!-- Left hand side -->
+  <mat-icon>book</mat-icon>
+  <h1>Angular Performance Benchmark</h1>
+
+  <!-- Right hand side -->
+  <span class="header__toolbar-spacer"></span>
+  <nav>
+    <a mat-button routerLink="home" routerLinkActive="active">Home</a>
+    <a mat-button routerLink="login" routerLinkActive="active">Login</a>
+  </nav>
+  <div *ngIf="isAuthenticated">
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>verified_user</mat-icon>
+      {{username}}
+    </button>
+    <mat-menu
+      #userMenu="matMenu"
+      [overlapTrigger]="false"
+    >
+      <button
+        mat-button
+        (click)="handleLogout()"
+      >
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+    <div class="header__username"></div>
+  </div>
+
+</mat-toolbar>

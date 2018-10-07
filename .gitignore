@@ -4,3 +4,4 @@ idea/
 .iml
 yarn-error.log
 build
+*.report.html

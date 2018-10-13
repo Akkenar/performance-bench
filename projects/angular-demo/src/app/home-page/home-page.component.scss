@@ -5,6 +5,9 @@
 .product-card__image {
   display: block;
   margin: 1em;
+  width: 200px;
+  height: 200px;
+  flex-flow: row;
 }
 
 .product-card__line {

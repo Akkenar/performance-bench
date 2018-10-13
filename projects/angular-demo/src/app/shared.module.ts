@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 // Angular Modules
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoaderModule } from './loader/loader.module';
 
 /**
  * The Shared Modules enables lazy-loaded modules to share some common
@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
  */
 @NgModule({
   declarations: [],
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
-  exports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, HttpClientModule, LoaderModule],
+  exports: [CommonModule, HttpClientModule, LoaderModule],
 })
 export class SharedModule {}

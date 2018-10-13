@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PendingInterceptorService } from './pending-interceptor.service';
 
 @Component({
   selector: 'app-loader',
@@ -6,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loader.component.scss'],
 })
 export class LoaderComponent implements OnInit {
-  isLoading = false;
+  isLoading: Observable<boolean>;
 
-  constructor() {}
+  constructor(private pendingInterceptor: PendingInterceptorService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isLoading = this.pendingInterceptor.pendingRequestsStatus$;
+  }
 }

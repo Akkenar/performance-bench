@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { AppState } from '../app.state';
 
-import { selectUserEmail } from '../user/user.selector';
+import { selectUserEmail } from './user.selector';
 
 @NgModule({
   exports: [],

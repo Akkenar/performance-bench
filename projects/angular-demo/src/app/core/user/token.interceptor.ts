@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
 import {
-  HttpRequest,
-  HttpHandler,
+  HTTP_INTERCEPTORS,
   HttpEvent,
+  HttpHandler,
   HttpInterceptor,
+  HttpRequest,
 } from '@angular/common/http';
+import { ExistingProvider, Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../app.state';
-import { selectUser } from '../user/user.selector';
+import { selectUser } from './user.selector';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TokenInterceptor implements HttpInterceptor {
   private token: string;
 
@@ -44,3 +47,11 @@ export class TokenInterceptor implements HttpInterceptor {
     return next.handle(request);
   }
 }
+
+export const TokenInterceptorProvider: ExistingProvider[] = [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useExisting: TokenInterceptor,
+    multi: true,
+  },
+];

@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { IsNotAuthenticatedGuard } from '../core/auth/is-not-authenticated.guard';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { RouterModule, Routes } from '@angular/router';
+import { IsNotAuthenticatedGuard } from '../core/user/is-not-authenticated.guard';
 import { UserModule } from '../core/user/user.module';
+import { SharedModule } from '../shared.module';
 
 import { LoginPageComponent } from './login-page.component';
-import { SharedModule } from '../shared.module';
 
 // routes
 export const ROUTES: Routes = [
@@ -23,6 +24,8 @@ export const ROUTES: Routes = [
   imports: [
     RouterModule.forChild(ROUTES),
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,

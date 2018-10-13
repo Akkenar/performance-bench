@@ -5,7 +5,7 @@
   <meta name="Description" content="A simple performance test app">
   <title>Angular</title>
   <base href="/">
-
+  <link rel="preconnect" href="https://reqres.in">
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,6 +29,11 @@
   </noscript>
 </head>
 <body>
-<app-root></app-root>
+<app-root>
+  <div class="loader__overlay">
+    <div class="loader__spinner-container">
+    </div>
+  </div>
+</app-root>
 </body>
 </html>

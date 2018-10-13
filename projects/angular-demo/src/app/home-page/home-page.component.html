@@ -5,13 +5,13 @@
   <mat-card-title>{{product.name | titlecase}}</mat-card-title>
   <mat-card-content>
     <div class="product-card__line">
-      <img
+      <app-dynamic-image
         class="product-card__image"
         alt=""
         width="200"
         height="200"
-        src="assets/img.jpg"
-      />
+        src="assets/img.jpg?id={{product.id}}"
+      ></app-dynamic-image>
       <p class="product-card__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris risus ante, ornare id libero a, accumsan euismod sapien. Phasellus interdum egestas
         ante,

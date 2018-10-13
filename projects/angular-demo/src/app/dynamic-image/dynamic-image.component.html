@@ -1,0 +1,19 @@
+<img
+  *ngIf="shouldDisplayImage; else placeholder"
+  [alt]="alt"
+  [src]="src"
+  [height]="height"
+  [width]="width"
+/>
+
+<ng-template #placeholder>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1024 1024"
+    [attr.title]="alt"
+    [attr.height]="height"
+    [attr.width]="width"
+  >
+    <path d=""/>
+  </svg>
+</ng-template>

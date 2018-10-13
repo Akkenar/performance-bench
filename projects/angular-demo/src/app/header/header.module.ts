@@ -21,6 +21,8 @@ import { HeaderComponent } from './header.component';
     MatIconModule,
     UserModule,
   ],
-  exports: [HeaderComponent],
+  entryComponents: [HeaderComponent],
 })
-export class HeaderModule {}
+export class HeaderModule {
+  static entry = HeaderComponent;
+}

@@ -7,7 +7,6 @@ import { LogoutAction } from '../core/user/user.actions';
 import { selectUserEmail } from '../core/user/user.selector';
 
 @Component({
-  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })

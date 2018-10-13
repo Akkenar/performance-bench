@@ -1,21 +1,28 @@
-import { NgModule } from '@angular/core';
+import {
+  NgModule,
+  NgModuleFactoryLoader,
+  SystemJsNgModuleLoader,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideRoutes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppStoreModule } from './app-store.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './header/header.module';
-import { LoaderModule } from './loader/loader.module';
 import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [AppComponent],
+  providers: [
+    { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
+    provideRoutes([
+      { path: '', loadChildren: 'src/app/header/header.module#HeaderModule' },
+    ]),
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoaderModule,
-    HeaderModule,
     BrowserAnimationsModule,
     AppStoreModule,
     SharedModule,

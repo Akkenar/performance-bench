@@ -23,7 +23,6 @@ export class DynamicImageComponent implements OnInit {
 
   private displayTrigger: ElementRef;
 
-  public showImage = false;
   public imageInView = false;
   private readonly observer: IntersectionObserver;
 
@@ -36,26 +35,22 @@ export class DynamicImageComponent implements OnInit {
   }
 
   get shouldDisplayImage(): boolean {
-    return this.showImage && this.imageInView;
+    return this.imageInView;
+  }
+
+  get srcwebp(): string {
+    // Hacky but will do for now.
+    return this.src.replace('jpg', 'webp');
   }
 
   ngOnInit() {
     this.observer.observe(this.displayTrigger.nativeElement);
   }
 
-  private showImageWhenLoaded() {
-    const image = new Image();
-    image.onload = () => {
-      this.showImage = true;
-    };
-    image.src = this.src;
-  }
-
   private handleIntersect(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         this.imageInView = true;
-        this.showImageWhenLoaded();
 
         if (this.observer) {
           this.observer.unobserve(entry.target);

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './header/Header';
+import HeaderContainer from './header/HeaderContainer';
 
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
-import LoginPage from './login-page/LoginPage';
+import LoginPageContainer from './login-page/LoginPageContainer';
 import HomePage from './home-page/HomePage';
 
 class App extends Component {
@@ -12,11 +12,11 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <header className="App-header">
-            <Header />
+            <HeaderContainer />
           </header>
           <main>
             <Route exact path="/" component={HomePage} />
-            <Route path={'/login'} component={LoginPage} />
+            <Route path={'/login'} component={LoginPageContainer} />
             <Route path={'/home'} component={HomePage} />
           </main>
         </div>

@@ -9,9 +9,9 @@ import Book from '@material-ui/icons/Book';
 
 import './Header.css';
 
-const Header = props => {
+const Header = ({ removeUser, user }) => {
   return (
-    <AppBar>
+    <AppBar position="relative">
       <Toolbar>
         <IconButton aria-label="Menu">
           <Book />
@@ -26,6 +26,7 @@ const Header = props => {
           <Button component={Link} to="/login">
             Login
           </Button>
+          <Button onClick={() => removeUser()}>Logout {user.email}</Button>
         </div>
       </Toolbar>
     </AppBar>

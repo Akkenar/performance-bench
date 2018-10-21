@@ -26,9 +26,12 @@
         mat-icon-button
         title="Order"
         class="product-card__action"
+        (click)="addToBasket()"
       >
         <mat-icon>shop</mat-icon>
       </button>
     </div>
   </mat-card-content>
 </mat-card>
+
+<div #container></div>

@@ -25,7 +25,10 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "scripts": [],
-            "styles": ["src/styles.scss"]
+            "styles": ["src/styles.scss"],
+            "lazyModules": [
+              "src/app/add-to-basket-modal/add-to-basket-modal.module.ts"
+            ]
           },
           "configurations": {
             "production": {

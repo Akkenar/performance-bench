@@ -7,7 +7,9 @@ import { urls } from '../../api-urls';
 import { Credentials } from './credentials.type';
 import { User } from './user.type';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class UserService {
   constructor(private http: HttpClient) {}
 

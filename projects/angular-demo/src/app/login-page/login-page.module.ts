@@ -32,7 +32,6 @@ export const ROUTES: Routes = [
     MatCardModule,
     UserModule,
   ],
-  providers: [IsNotAuthenticatedGuard],
   declarations: [LoginPageComponent],
 })
 export class LoginPageModule {}

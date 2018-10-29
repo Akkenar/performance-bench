@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -7,8 +7,8 @@ import { AppState } from '../app.state';
 
 import { selectUserEmail } from './user.selector';
 
-@NgModule({
-  exports: [],
+@Injectable({
+  providedIn: 'root'
 })
 export class IsNotAuthenticatedGuard implements CanActivate {
   state$: Observable<boolean>;

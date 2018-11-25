@@ -13,26 +13,20 @@
       routerLink="login"
       routerLinkActive="active"
     >
-      Login</a>
+      Login
+    </a>
   </nav>
-  <div *ngIf="isAuthenticated$ | async">
+  <div *ngIf="(isAuthenticated$ | async)">
     <button mat-button [matMenuTriggerFor]="userMenu">
       <mat-icon>verified_user</mat-icon>
-      {{username$ | async}}
+      {{ username$ | async }}
     </button>
-    <mat-menu
-      #userMenu="matMenu"
-      [overlapTrigger]="false"
-    >
-      <button
-        mat-button
-        (click)="handleLogout()"
-      >
+    <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+      <button mat-button (click)="handleLogout()">
         <mat-icon>exit_to_app</mat-icon>
         Logout
       </button>
     </mat-menu>
     <div class="header__username"></div>
   </div>
-
 </mat-toolbar>

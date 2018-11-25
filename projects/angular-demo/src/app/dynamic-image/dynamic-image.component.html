@@ -1,18 +1,7 @@
-<picture
-  *ngIf="shouldDisplayImage; else placeholder"
->
-  <source
-    type="image/webp"
-    [srcset]="srcwebp"
-  >
-  <img
-    [alt]="alt"
-    [src]="src"
-    [height]="height"
-    [width]="width"
-  />
+<picture *ngIf="shouldDisplayImage; else: placeholder">
+  <source type="image/webp" [srcset]="srcwebp" />
+  <img [alt]="alt" [src]="src" [height]="height" [width]="width" />
 </picture>
-
 
 <ng-template #placeholder>
   <svg
@@ -22,6 +11,6 @@
     [attr.height]="height"
     [attr.width]="width"
   >
-    <path d=""/>
+    <path d="" />
   </svg>
 </ng-template>

@@ -8,7 +8,7 @@ import { AppState } from '../app.state';
 import { selectUserEmail } from './user.selector';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class IsNotAuthenticatedGuard implements CanActivate {
   state$: Observable<boolean>;

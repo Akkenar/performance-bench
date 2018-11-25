@@ -1,8 +1,5 @@
-<mat-card
-  class="product-card"
-  *ngFor="let product of products | async"
->
-  <mat-card-title>{{product.name | titlecase}}</mat-card-title>
+<mat-card class="product-card" *ngFor="let product of (products | async)">
+  <mat-card-title>{{ product.name | titlecase }}</mat-card-title>
   <mat-card-content>
     <div class="product-card__line">
       <app-dynamic-image
@@ -13,12 +10,14 @@
         src="assets/img.jpg?id={{product.id}}"
       ></app-dynamic-image>
       <p class="product-card__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris risus ante, ornare id libero a, accumsan euismod sapien. Phasellus interdum egestas
-        ante,
-        sed volutpat magna consectetur vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus turpis massa. Donec id venenatis dolor. Ut
-        scelerisque nulla aliquet, rhoncus felis quis, egestas orci. Vivamus egestas venenatis ligula in cursus. Sed in sem eget felis bibendum pharetra.
-        Vivamus
-        ante urna, aliquam sed mauris nec, dictum semper urna.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris risus
+        ante, ornare id libero a, accumsan euismod sapien. Phasellus interdum
+        egestas ante, sed volutpat magna consectetur vitae. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Donec dapibus turpis massa. Donec
+        id venenatis dolor. Ut scelerisque nulla aliquet, rhoncus felis quis,
+        egestas orci. Vivamus egestas venenatis ligula in cursus. Sed in sem
+        eget felis bibendum pharetra. Vivamus ante urna, aliquam sed mauris nec,
+        dictum semper urna.
       </p>
     </div>
     <div class="product-card__line">

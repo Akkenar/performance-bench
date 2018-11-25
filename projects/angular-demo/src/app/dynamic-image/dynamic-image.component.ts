@@ -21,17 +21,14 @@ export class DynamicImageComponent implements OnInit {
   @Input()
   public height: string;
 
-  private displayTrigger: ElementRef;
-
   public imageInView = false;
   private readonly observer: IntersectionObserver;
 
-  constructor(displayTrigger: ElementRef) {
+  constructor(private displayTrigger: ElementRef) {
     this.observer = new IntersectionObserver(
       this.handleIntersect.bind(this),
       OBSERVER_OPTIONS
     );
-    this.displayTrigger = displayTrigger;
   }
 
   get shouldDisplayImage(): boolean {

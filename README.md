@@ -43,8 +43,8 @@ To build the apps and start the docker server, use:
 
 ```bash
 yarn
-npm run yarn
-npm run build
+yarn yarn
+yarn build
 ./start.sh
 ```
 
